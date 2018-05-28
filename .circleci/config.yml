@@ -25,4 +25,3 @@ jobs:
     - run: |
         gradle build
         java -jar build/ChangeLog.jar
-        java -jar build/ChangeLog.jar
