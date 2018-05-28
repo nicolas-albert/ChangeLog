@@ -74,7 +74,7 @@ public class Trac {
 
 	public Trac(String[] args) {
 		parseParam(args);
-
+		// Fix issues
 		if ("C8oSDK".equals(product)) {
 			this.tracQueryMilestonesURL = "http://devus.twinsoft.fr/report/37?format=tab";
 		}
