@@ -94,7 +94,6 @@ public class Trac {
 	protected void parseParam(String[] args) {
 		if (args.length != 3) {
 			System.out.println(getHelp());
-			System.exit(-1);
 		}
 
 		for (String arg : args) {
