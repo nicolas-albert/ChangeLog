@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/openjdk:8-jdk
+    steps:
+    - restore_cache:
+        keys:
+        - v1-git-{{ .Revision }}
+        - v1-git-
+        
+    - checkout
+    
+    - save_cache:
+        paths:
+        - .git
+        key: v1-git-{{ .Revision }}
+        
+    - restore_cache:
+        keys:
+        - v2-dependencies-studio-{{ checksum "build.gradle" }}-{{ checksum ".circleci/config.yml" }}
+        - v2-dependencies-{{ checksum "build.gradle" }}-{{ checksum ".circleci/config.yml" }}
+        - v2-dependencies-    
+        
+    - run: |
+        gradle build
+        java -jar build/ChangeLog.jar
