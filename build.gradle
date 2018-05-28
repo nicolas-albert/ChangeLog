@@ -16,3 +16,13 @@ sourceSets {
 		}
 	}
 }
+
+jar {
+	manifest {
+		attributes "Main-Class": "com.convertigo.changelog.Trac"
+	}
+	
+	from {
+		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}
