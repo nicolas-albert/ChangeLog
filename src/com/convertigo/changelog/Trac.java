@@ -83,7 +83,7 @@ public class Trac {
 	}
 
 	protected String getHelp() {
-		return "Usage:\n" + "-v=<current version number>\n" + "-p=<product name>\n"
+		return "# Usage:\n" + "-v=<current version number>\n" + "-p=<product name>\n"
 				+ "-o=<output file path>\n";
 	}
 
